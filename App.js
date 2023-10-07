@@ -9,6 +9,7 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
+import { StyledButton, ResultContainer } from "./components/Button/Button.style";
 
 export default function App() {
   const [num1, setNum1] = useState("");
@@ -85,9 +86,13 @@ export default function App() {
           value={num4}
           keyboardType="numeric"
           />
-        <Button title="Somar" onPress={averageCalc} />
+        <StyledButton>
+          <Button color="#B0578D" title="Somar" onPress={averageCalc} />
+        </StyledButton>
       </View>
-      <Text style={styles.result}>{result}</Text>
+      <ResultContainer>
+        <Text>{result}</Text>
+      </ResultContainer>
     </View>
           </DismissKeyboard>
   );
@@ -121,12 +126,5 @@ const styles = StyleSheet.create({
     color: "#0000008d",
     borderRadius: "5px",
     border: "none",
-  },
-  result: {
-    backgroundColor: "lightblue",
-    marginTop: 30,
-    padding: 20,
-    fontSize: 16,
-    borderRadius: "20px",
   },
 });
